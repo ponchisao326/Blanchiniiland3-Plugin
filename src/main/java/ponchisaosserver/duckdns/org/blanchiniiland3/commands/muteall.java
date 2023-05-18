@@ -45,8 +45,8 @@ public class muteall implements CommandExecutor {
         }
         else if (sender instanceof ConsoleCommandSender){
             if (args.length == 0) {
-                System.out.println(ChatColor.RED + "No has especificado si quieres activarlo o desactivarlo!");
-                System.out.println(ChatColor.RED + "Usage: /muteall <on:off>");
+                System.out.println("No has especificado si quieres activarlo o desactivarlo!");
+                System.out.println("Usage: /muteall <on:off>");
             }
             else {
                 String word = args[0];
@@ -62,7 +62,7 @@ public class muteall implements CommandExecutor {
                     System.out.println("Ahora todos pueden hablar");
                 }
                 else {
-                    System.out.println(ChatColor.RED + "Ese no es un argumento valido!");
+                    System.out.println("Ese no es un argumento valido!");
                 }
             }
         }
