@@ -13,7 +13,6 @@ public class info implements CommandExecutor {
         if (sender instanceof Player player){
 
             player.sendMessage("§7[§c§lBLANCHINIILAND§7] §b» §fBienvenido a la info, este es un plugin desarrollado por §ePonchisao326 §fpara el servidor de §eBlanchiniiland 3. §fSi necesitas ayuda sobre mi, usa /blanchiniiland help");
-            player.setHealth(20);
         }
         return true;
     }
