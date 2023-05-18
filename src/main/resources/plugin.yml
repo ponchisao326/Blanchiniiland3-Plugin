@@ -1,0 +1,26 @@
+name: Blanchiniiland-3
+version: '${project.version}'
+main: ponchisaosserver.duckdns.org.blanchiniiland3.Blanchiniiland3
+api-version: 1.19
+authors: [ Ponchisao326 ]
+description: Plugin made for Blanchiniiland 3
+prefix: Blanchiniiland
+permissions:
+  blanchiniiland.muteall:
+    description: Used by the muteall command
+    default: op
+  blanchiniiland.cantalk:
+    description: Used to by the muteall event
+    default: op
+commands:
+  info:
+    description: Muestra una breve descripción del plugin
+    usage: "Usage: /blanchiniiland <command>"
+  muteall:
+    usage: "Usage: /<command>"
+    description: Mute all players
+    permission: blanchiniiland.muteall
+    permission-message: You do not have the required permission to run this command.
+  blanchiniiland:
+    usage: "Usage: /<command> <option>"
+    description: base for the plugin commands
