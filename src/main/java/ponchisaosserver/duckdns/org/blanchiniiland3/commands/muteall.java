@@ -1,6 +1,7 @@
 package ponchisaosserver.duckdns.org.blanchiniiland3.commands;
 
 
+import org.bukkit.ChatColor;
 import ponchisaosserver.duckdns.org.blanchiniiland3.Blanchiniiland3;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -41,12 +42,29 @@ public class muteall implements CommandExecutor {
                     player.sendMessage("§7[§c§lBLANCHINIILAND§7] §b» §cEse no es un argumento valido!");
                 }
             }
-
-
-
         }
         else if (sender instanceof ConsoleCommandSender){
-            System.out.println("Activando comando...");
+            if (args.length == 0) {
+                System.out.println(ChatColor.RED + "No has especificado si quieres activarlo o desactivarlo!");
+                System.out.println(ChatColor.RED + "Usage: /muteall <on:off>");
+            }
+            else {
+                String word = args[0];
+                if (word.equals("on")) {
+                    ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
+                    String main_command = "lp group default permission set blanchiniiland.cantalk false";
+                    Bukkit.dispatchCommand(console, main_command);
+                    System.out.println("Ahora nadie puede hablar");
+                } else if (word.equals("off")) {
+                    ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
+                    String main_command = "lp group default permission set blanchiniiland.cantalk true";
+                    Bukkit.dispatchCommand(console, main_command);
+                    System.out.println("Ahora todos pueden hablar");
+                }
+                else {
+                    System.out.println(ChatColor.RED + "Ese no es un argumento valido!");
+                }
+            }
         }
 
         return true;
